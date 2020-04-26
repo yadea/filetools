@@ -88,6 +88,7 @@
             // cmdLockGroup2
             // 
             this.cmdLockGroup2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdLockGroup2.Enabled = false;
             this.cmdLockGroup2.Location = new System.Drawing.Point(451, 76);
             this.cmdLockGroup2.Name = "cmdLockGroup2";
             this.cmdLockGroup2.Size = new System.Drawing.Size(75, 23);
@@ -104,6 +105,7 @@
             this.cmdClearGroup2.TabIndex = 6;
             this.cmdClearGroup2.Text = "Clear List";
             this.cmdClearGroup2.UseVisualStyleBackColor = true;
+            this.cmdClearGroup2.Click += new System.EventHandler(this.cmdClearGroup2_Click);
             // 
             // cmdAddGroup2
             // 
@@ -114,6 +116,7 @@
             this.cmdAddGroup2.TabIndex = 5;
             this.cmdAddGroup2.Text = "Add folder(s)";
             this.cmdAddGroup2.UseVisualStyleBackColor = true;
+            this.cmdAddGroup2.Click += new System.EventHandler(this.cmdAddGroup2_Click);
             // 
             // chkGroup2
             // 
@@ -145,6 +148,7 @@
             // cmdLockGroup1
             // 
             this.cmdLockGroup1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdLockGroup1.Enabled = false;
             this.cmdLockGroup1.Location = new System.Drawing.Point(451, 77);
             this.cmdLockGroup1.Name = "cmdLockGroup1";
             this.cmdLockGroup1.Size = new System.Drawing.Size(75, 23);
@@ -161,6 +165,7 @@
             this.cmdClearGroup1.TabIndex = 2;
             this.cmdClearGroup1.Text = "Clear List";
             this.cmdClearGroup1.UseVisualStyleBackColor = true;
+            this.cmdClearGroup1.Click += new System.EventHandler(this.cmdClearGroup1_Click);
             // 
             // cmdAddGroup1
             // 
@@ -239,16 +244,15 @@
             this.cboAction1.Size = new System.Drawing.Size(222, 21);
             this.cboAction1.TabIndex = 0;
             // 
-            // frm
+            // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.FormClosing += FrmMain_FormClosing;
             this.MinimumSize = new System.Drawing.Size(800, 600);
-            this.Name = "frm";
+            this.Name = "frmMain";
             this.Text = "Form1";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.grpGroup2.ResumeLayout(false);
