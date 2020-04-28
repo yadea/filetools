@@ -37,7 +37,7 @@ namespace File_Tools.Modules
 
         public static void Log(string message, LogType type = LogType.Info)
         {
-            message = DateTime.Now.ToString("dd/mm/yyyy hh:MM:ss - ") + message;
+            message = DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss - ") + message;
             Message msg = new Message(message, type);
             messageQueue.Enqueue(msg);
         }
@@ -50,7 +50,7 @@ namespace File_Tools.Modules
             }
             if (File.Exists(LOGFILENAME))
             {
-                File.Move(LOGFILENAME, "Logs\\Log(" + DateTime.Now.ToString("yyyymmddhhMMss") + ").log");
+                File.Move(LOGFILENAME, "Logs\\Log(" + DateTime.Now.ToString("yyyyMMddhhmmss") + ").log");
                 Thread.Sleep(1000);
             }
 

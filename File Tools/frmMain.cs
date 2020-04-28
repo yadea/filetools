@@ -76,7 +76,7 @@ namespace File_Tools
 
         private void cmdClearGroup1_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Confirm clear group 1 list?", "Confirm",MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Confirm clear group 1 list?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 chkGroup1.Items.Clear();
             }
@@ -95,5 +95,38 @@ namespace File_Tools
             logging.stop();
         }
         #endregion
+
+        private void cmdStart_Click(object sender, EventArgs e)
+        {
+            Logging.Log("Start clicked.", Logging.LogType.Debug);
+            if (cboAction.Text == "Fill")
+            {
+                if (chkGroup1.CheckedItems.Count == 0)
+                {
+                    Logging.Log("Group 1 empty.", Logging.LogType.Debug);
+                    MessageBox.Show("Please add items in group 1.");
+                }
+                else if (chkGroup1.CheckedItems.Count == 0 || chkGroup1.CheckedItems.Count > 1)
+                {
+                    Logging.Log("Group 1 has " + chkGroup1.CheckedItems.Count + " items.", Logging.LogType.Debug);
+                    MessageBox.Show("Select only 1 item in group 1.");
+                }
+                else if (chkGroup2.CheckedItems.Count == 0)
+                {
+                    Logging.Log("Group 2 empty.", Logging.LogType.Debug);
+                    MessageBox.Show("Please add items in group 2.");
+                }
+                else if (chkGroup2.CheckedItems.Count == 0 || chkGroup2.CheckedItems.Count > 1)
+                {
+                    Logging.Log("Group 2 has " + chkGroup2.CheckedItems.Count + " items.", Logging.LogType.Debug);
+                    MessageBox.Show("Select only 1 item in group 2.");
+                }
+                else
+                {
+                    frmResults frmResults = new frmResults("Fill", chkGroup1.CheckedItems[0].ToString(), chkGroup2.CheckedItems[0].ToString());
+                    frmResults.ShowDialog();
+                }
+            }
+        }
     }
 }

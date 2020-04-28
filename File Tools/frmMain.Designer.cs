@@ -43,7 +43,8 @@
             this.cboMode = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.cboAction1 = new System.Windows.Forms.ComboBox();
+            this.cboAction = new System.Windows.Forms.ComboBox();
+            this.cmdStart = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.grpGroup2.SuspendLayout();
             this.grpGroup1.SuspendLayout();
@@ -52,8 +53,8 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
@@ -71,8 +72,8 @@
             // 
             // grpGroup2
             // 
-            this.grpGroup2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.grpGroup2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grpGroup2.Controls.Add(this.cmdLockGroup2);
             this.grpGroup2.Controls.Add(this.cmdClearGroup2);
@@ -120,8 +121,8 @@
             // 
             // chkGroup2
             // 
-            this.chkGroup2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.chkGroup2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chkGroup2.FormattingEnabled = true;
             this.chkGroup2.Location = new System.Drawing.Point(6, 18);
@@ -131,8 +132,8 @@
             // 
             // grpGroup1
             // 
-            this.grpGroup1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.grpGroup1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grpGroup1.Controls.Add(this.cmdLockGroup1);
             this.grpGroup1.Controls.Add(this.cmdClearGroup1);
@@ -180,8 +181,8 @@
             // 
             // chkGroup1
             // 
-            this.chkGroup1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.chkGroup1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chkGroup1.FormattingEnabled = true;
             this.chkGroup1.Location = new System.Drawing.Point(6, 19);
@@ -191,10 +192,11 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cmdStart);
             this.groupBox1.Controls.Add(this.cboMode);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.cboAction1);
+            this.groupBox1.Controls.Add(this.cboAction);
             this.groupBox1.Location = new System.Drawing.Point(544, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(238, 552);
@@ -204,12 +206,14 @@
             // 
             // cboMode
             // 
+            this.cboMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMode.FormattingEnabled = true;
             this.cboMode.Items.AddRange(new object[] {
             "Group A only",
             "Group B only",
             "Group A to B",
             "Group B to A"});
+            this.cboMode.SelectedIndex = 2;
             this.cboMode.Location = new System.Drawing.Point(6, 77);
             this.cboMode.Name = "cboMode";
             this.cboMode.Size = new System.Drawing.Size(222, 21);
@@ -233,16 +237,29 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Action:";
             // 
-            // cboAction1
+            // cboAction
             // 
-            this.cboAction1.FormattingEnabled = true;
-            this.cboAction1.Items.AddRange(new object[] {
+            this.cboAction.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboAction.FormattingEnabled = true;
+            this.cboAction.Items.AddRange(new object[] {
+            "Fill",
             "Merge",
             "Find Duplicates"});
-            this.cboAction1.Location = new System.Drawing.Point(6, 37);
-            this.cboAction1.Name = "cboAction1";
-            this.cboAction1.Size = new System.Drawing.Size(222, 21);
-            this.cboAction1.TabIndex = 0;
+            this.cboAction.SelectedIndex= 0;
+            this.cboAction.Location = new System.Drawing.Point(6, 37);
+            this.cboAction.Name = "cboAction";
+            this.cboAction.Size = new System.Drawing.Size(222, 21);
+            this.cboAction.TabIndex = 0;
+            // 
+            // cmdStart
+            // 
+            this.cmdStart.Location = new System.Drawing.Point(153, 523);
+            this.cmdStart.Name = "cmdStart";
+            this.cmdStart.Size = new System.Drawing.Size(75, 23);
+            this.cmdStart.TabIndex = 4;
+            this.cmdStart.Text = "&Start";
+            this.cmdStart.UseVisualStyleBackColor = true;
+            this.cmdStart.Click += new System.EventHandler(this.cmdStart_Click);
             // 
             // frmMain
             // 
@@ -280,7 +297,8 @@
         private System.Windows.Forms.ComboBox cboMode;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cboAction1;
+        private System.Windows.Forms.ComboBox cboAction;
+        private System.Windows.Forms.Button cmdStart;
     }
 }
 
