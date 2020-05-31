@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.489
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "File Tools", "File Tools.csproj", "{74B2E5C4-FC25-48B6-8E55-BE63F7343E40}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "File Tools Test", "..\File Tools Test\File Tools Test.csproj", "{6A295499-5F50-4BF2-8D7B-C766A3B827C4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{74B2E5C4-FC25-48B6-8E55-BE63F7343E40}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74B2E5C4-FC25-48B6-8E55-BE63F7343E40}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74B2E5C4-FC25-48B6-8E55-BE63F7343E40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A295499-5F50-4BF2-8D7B-C766A3B827C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A295499-5F50-4BF2-8D7B-C766A3B827C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A295499-5F50-4BF2-8D7B-C766A3B827C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A295499-5F50-4BF2-8D7B-C766A3B827C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

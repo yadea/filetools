@@ -31,12 +31,12 @@
             this.prgBar = new System.Windows.Forms.ProgressBar();
             this.lblStatus = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.chkFileList = new System.Windows.Forms.CheckedListBox();
-            this.cmdCopy = new System.Windows.Forms.Button();
-            this.cmdMove = new System.Windows.Forms.Button();
-            this.cmdDelete = new System.Windows.Forms.Button();
-            this.cmdAutoScroll = new System.Windows.Forms.Button();
             this.cmdSelectAll = new System.Windows.Forms.Button();
+            this.cmdAutoScroll = new System.Windows.Forms.Button();
+            this.cmdDelete = new System.Windows.Forms.Button();
+            this.cmdMove = new System.Windows.Forms.Button();
+            this.cmdCopy = new System.Windows.Forms.Button();
+            this.chkFileList = new System.Windows.Forms.CheckedListBox();
             this.cmdExit = new System.Windows.Forms.Button();
             this.cmdCancel = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -73,45 +73,21 @@
             this.groupBox1.Size = new System.Drawing.Size(760, 449);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "File";
             // 
-            // chkFileList
+            // cmdSelectAll
             // 
-            this.chkFileList.FormattingEnabled = true;
-            this.chkFileList.Location = new System.Drawing.Point(6, 19);
-            this.chkFileList.Name = "chkFileList";
-            this.chkFileList.Size = new System.Drawing.Size(748, 379);
-            this.chkFileList.TabIndex = 0;
-            // 
-            // cmdCopy
-            // 
-            this.cmdCopy.Location = new System.Drawing.Point(679, 420);
-            this.cmdCopy.Name = "cmdCopy";
-            this.cmdCopy.Size = new System.Drawing.Size(75, 23);
-            this.cmdCopy.TabIndex = 1;
-            this.cmdCopy.Text = "&Copy";
-            this.cmdCopy.UseVisualStyleBackColor = true;
-            // 
-            // cmdMove
-            // 
-            this.cmdMove.Location = new System.Drawing.Point(598, 420);
-            this.cmdMove.Name = "cmdMove";
-            this.cmdMove.Size = new System.Drawing.Size(75, 23);
-            this.cmdMove.TabIndex = 2;
-            this.cmdMove.Text = "Move(X)";
-            this.cmdMove.UseVisualStyleBackColor = true;
-            // 
-            // cmdDelete
-            // 
-            this.cmdDelete.Location = new System.Drawing.Point(517, 420);
-            this.cmdDelete.Name = "cmdDelete";
-            this.cmdDelete.Size = new System.Drawing.Size(75, 23);
-            this.cmdDelete.TabIndex = 3;
-            this.cmdDelete.Text = "Delete(Del)";
-            this.cmdDelete.UseVisualStyleBackColor = true;
+            this.cmdSelectAll.Enabled = false;
+            this.cmdSelectAll.Location = new System.Drawing.Point(87, 420);
+            this.cmdSelectAll.Name = "cmdSelectAll";
+            this.cmdSelectAll.Size = new System.Drawing.Size(75, 23);
+            this.cmdSelectAll.TabIndex = 5;
+            this.cmdSelectAll.Text = "Select &All";
+            this.cmdSelectAll.UseVisualStyleBackColor = true;
             // 
             // cmdAutoScroll
             // 
+            this.cmdAutoScroll.Enabled = false;
             this.cmdAutoScroll.Location = new System.Drawing.Point(6, 420);
             this.cmdAutoScroll.Name = "cmdAutoScroll";
             this.cmdAutoScroll.Size = new System.Drawing.Size(75, 23);
@@ -119,14 +95,45 @@
             this.cmdAutoScroll.Text = "Auto Scroll";
             this.cmdAutoScroll.UseVisualStyleBackColor = true;
             // 
-            // cmdSelectAll
+            // cmdDelete
             // 
-            this.cmdSelectAll.Location = new System.Drawing.Point(87, 420);
-            this.cmdSelectAll.Name = "cmdSelectAll";
-            this.cmdSelectAll.Size = new System.Drawing.Size(75, 23);
-            this.cmdSelectAll.TabIndex = 5;
-            this.cmdSelectAll.Text = "Select &All";
-            this.cmdSelectAll.UseVisualStyleBackColor = true;
+            this.cmdDelete.Enabled = false;
+            this.cmdDelete.Location = new System.Drawing.Point(517, 420);
+            this.cmdDelete.Name = "cmdDelete";
+            this.cmdDelete.Size = new System.Drawing.Size(75, 23);
+            this.cmdDelete.TabIndex = 3;
+            this.cmdDelete.Text = "Delete(Del)";
+            this.cmdDelete.UseVisualStyleBackColor = true;
+            // 
+            // cmdMove
+            // 
+            this.cmdMove.Enabled = false;
+            this.cmdMove.Location = new System.Drawing.Point(598, 420);
+            this.cmdMove.Name = "cmdMove";
+            this.cmdMove.Size = new System.Drawing.Size(75, 23);
+            this.cmdMove.TabIndex = 2;
+            this.cmdMove.Text = "Move(X)";
+            this.cmdMove.UseVisualStyleBackColor = true;
+            // 
+            // cmdCopy
+            // 
+            this.cmdCopy.Enabled = false;
+            this.cmdCopy.Location = new System.Drawing.Point(679, 420);
+            this.cmdCopy.Name = "cmdCopy";
+            this.cmdCopy.Size = new System.Drawing.Size(75, 23);
+            this.cmdCopy.TabIndex = 1;
+            this.cmdCopy.Text = "&Copy";
+            this.cmdCopy.UseVisualStyleBackColor = true;
+            this.cmdCopy.Click += new System.EventHandler(this.cmdCopy_Click);
+            // 
+            // chkFileList
+            // 
+            this.chkFileList.CheckOnClick = true;
+            this.chkFileList.FormattingEnabled = true;
+            this.chkFileList.Location = new System.Drawing.Point(6, 19);
+            this.chkFileList.Name = "chkFileList";
+            this.chkFileList.Size = new System.Drawing.Size(748, 379);
+            this.chkFileList.TabIndex = 0;
             // 
             // cmdExit
             // 

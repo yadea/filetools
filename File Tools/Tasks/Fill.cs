@@ -40,18 +40,24 @@ namespace File_Tools.Tasks
             string[] filesInPath2 = fileManager.GenerateFileList(PATH2, true);
             Logging.Log(filesInPath2.Length + " files found in path2 after " + DateTime.Now.Subtract(startTime).TotalMilliseconds + "ms.", Logging.LogType.Debug);
             FRMRESULTS.UpdateStatus("Found " + filesInPath2.Length + " files found in " + PATH2, 2);
-            
+
             //perform the merge
+            FRMRESULTS.UpdateStatus("Merging files ...");
+            //FRMRESULTS.SetProgressBarMax(filesInPath1.Length);
+            int progress = 0;
             foreach (string file in filesInPath1)
             {
                 if (!filesInPath2.Contains(file))
                 {
                     FRMRESULTS.AddFileToList(file);
                 }
+                progress += 1;
+                //FRMRESULTS.SetProgressBarValue(progress);
             }
 
             //End of task
             DateTime endTime = DateTime.Now;
+            FRMRESULTS.UpdateStatus("Process complete.");
             Logging.Log("Fill task completed at " + endTime.ToString("dd/MM/yyyy hh:mm:ss") + " in " + endTime.Subtract(startTime).TotalMilliseconds + "ms.", Logging.LogType.Debug);
         }
     }
